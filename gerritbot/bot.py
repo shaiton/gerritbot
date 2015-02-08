@@ -234,9 +234,7 @@ class Gerrit(threading.Thread):
             if data['type'] == 'ref-updated':
                 channel_set = self.channel_config.events.get('ref-updated')
             else:
-                channel_set = (self.channel_config.projects.get(
-                    data['change']['project'], set()) &
-                    self.channel_config.events.get(
+                channel_set = (self.channel_config.events.get(
                         data['type'], set()) &
                     self.channel_config.branches.get(
                         data['change']['branch'], set()))
