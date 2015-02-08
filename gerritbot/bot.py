@@ -151,7 +151,7 @@ class Gerrit(threading.Thread):
 
     def patchset_created(self, channel, data):
         msg = '%s proposed %s: %s  %s' % (
-            data['patchSet']['uploader']['name'],
+            data['patchSet']['uploader']['username'],
             data['change']['project'],
             data['change']['subject'],
             data['change']['url'])
